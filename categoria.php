@@ -8,15 +8,13 @@ class Categoria
     public function __construct($nome)
     {
 
-        $this->setNome($nome);
+        $this -> setNome($nome);
     }
-
-
 
     public function getNome()
     {
 
-        return $this->nome;
+        return $this -> nome;
     }
     public function setNome($nome)
     {
