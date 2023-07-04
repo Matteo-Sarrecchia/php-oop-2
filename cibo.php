@@ -1,7 +1,23 @@
 <?php
 
+trait IngredientFood {
+
+    private $ingredienti;
+
+    public function getIngredienti(){
+
+        return $this -> ingredienti;
+    }
+
+    public function setIngredienti($ingredienti){
+        $this -> ingredienti = $ingredienti;
+    }
+}
+
 class Cibo extends Product
 {
+    use IngredientFood;
+
     private $marca;
     private $peso;
     public function __construct(
@@ -11,8 +27,10 @@ class Cibo extends Product
         $prezzo,
         Categoria $categoria,
         $marca,
-        $peso
-    ) {
+        $peso,
+        $ingredienti
+    ) 
+    {
         parent::__construct(
             $immagine,
             $titolo,
@@ -20,8 +38,11 @@ class Cibo extends Product
             $prezzo,
             $categoria
         );
-        $this->setMarca($marca);
-        $this->setPeso($peso);
+        
+        $this -> setMarca($marca);
+        $this -> setPeso($peso);
+
+        $this -> setIngredienti($ingredienti);
     }
     public function getMarca()
     {

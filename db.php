@@ -14,8 +14,9 @@ $productCibo = new Cibo(
     "Croccantini dolci per animali",
     21.50,
     $categoria1,
-    "Pet",
-    "25kg"
+    "Pet Food",
+    25,
+    "Pollo e Tacchino"
 );
 
 echo "<br>";
@@ -27,7 +28,8 @@ $productGioco = new Giochi(
     347.28,
     $categoria2,
     "plastica",
-    "viola"
+    "viola",
+    1.5
 );
 
 // echo "<pre>";

@@ -1,7 +1,29 @@
 <?php
 
+trait PesoGioco {
+
+    private $weight;
+
+    public function getWeight() {
+
+        return $this -> weight;
+    }
+    public function setWeight($weight) {
+
+        if ($weight <= 0) {
+
+            throw new Exception("Weight can't be negative");
+        }
+
+        $this -> weight = $weight;
+    }
+}
+
 class Giochi extends Product
 {
+
+    use PesoGioco;
+
     private $materiale;
     private $colore;
 
@@ -12,8 +34,9 @@ class Giochi extends Product
         $prezzo,
         Categoria $categoria,
         $materiale,
-        $colore
-    ) {
+        $colore,
+        $weight)
+    {
 
         parent::__construct(
             $immagine,
@@ -25,6 +48,9 @@ class Giochi extends Product
 
         $this->setMateriale($materiale);
         $this->setColore($colore);
+
+        $this -> setWeight($weight);
+
     }
 
 

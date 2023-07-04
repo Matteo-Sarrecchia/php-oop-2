@@ -65,7 +65,14 @@
         </div>
 
         <div>
-            <?php echo $productCibo -> getPrezzo(); ?>
+            <span>
+                Ingredienti:
+            </span>
+            <?php echo $productCibo -> getIngredienti(); ?>
+        </div>
+
+        <div>
+            <?php echo $productCibo -> getPrezzo(); ?> €
         </div>
 
         <div>
@@ -73,8 +80,9 @@
         </div>
 
         <div>
-            <?php echo $productCibo -> getPeso(); ?>
+            <?php echo $productCibo -> getPeso(); ?> KG
         </div>
+
     </div>
 
     <div id="prodotto-gioco">
@@ -89,7 +97,7 @@
         </div>
 
         <div>
-            <?php echo $productGioco -> getPrezzo(); ?>
+            <?php echo $productGioco -> getPrezzo(); ?> €
         </div>
 
         <div>
@@ -99,6 +107,10 @@
         <div>
             <?php echo $productGioco -> getColore(); ?>
         </div> 
+
+        <div>
+            <?php echo $productGioco -> getWeight(); ?> KG
+        </div>
     </div>
 </div>
 
