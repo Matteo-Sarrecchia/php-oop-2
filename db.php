@@ -27,8 +27,8 @@ $productGioco = new Giochi(
     "Pallina di gomma per animali",
     347.28,
     $categoria2,
-    "plastica",
-    "viola",
+    "Plastica e Gomma",
+    "Multicolore",
     1.5
 );
 

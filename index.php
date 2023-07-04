@@ -17,6 +17,7 @@
 
         .container{
             border: 1px solid black;
+            border-radius: 20px;
             padding: 20px;
             width: 80%;
             margin: 0 auto;
@@ -30,8 +31,19 @@
             font-size: 50px;
         }
 
+        #img-row{
+            border: 1px solid black;
+            border-radius: 20px;
+            width: 250px;
+            height: 250px;
+            margin: auto;
+            background-color: white;
+        }
+
         img{
-            width: 300px;
+            max-width: 100%;
+            border-radius: 20px;
+            display: block;
         }
 
         div{
@@ -41,6 +53,7 @@
 
         #prodotto-gioco, #prodotto-cibo{
             border: 1px solid black;
+            border-radius: 20px;
             margin: 30px;
             width: 50%;
             background-color: lightblue;
@@ -58,7 +71,9 @@
             <?php echo $productCibo -> getTitolo(); ?>
         </h1>
 
-        <img src="<?php echo $productCibo -> getImmagine(); ?>" alt="">
+        <div id="img-row">
+            <img src="<?php echo $productCibo -> getImmagine(); ?>" alt="">
+        </div>
 
         <div>
             <?php echo $productCibo -> getDescrizione(); ?>
@@ -69,6 +84,10 @@
                 Ingredienti:
             </span>
             <?php echo $productCibo -> getIngredienti(); ?>
+        </div>
+
+        <div>
+            <?php echo $productCibo -> getMarca(); ?>
         </div>
 
         <div>
@@ -90,7 +109,9 @@
             <?php echo $productGioco -> getTitolo(); ?>
         </h1>
 
-        <img src="<?php echo $productGioco -> getImmagine(); ?>" alt="">
+        <div id="img-row">
+            <img src="<?php echo $productGioco -> getImmagine(); ?>" alt="">
+        </div>
 
         <div>
             <?php echo $productGioco -> getDescrizione(); ?>
@@ -101,15 +122,21 @@
         </div>
 
         <div>
+            <?php echo $productGioco -> getMateriale(); ?>
+        </div>
+        
+        <div>
+            <?php echo $productGioco -> getColore(); ?>
+        </div> 
+        
+        <div>
             <?php echo $productGioco -> getCategoria() -> getNome(); ?>
         </div>
 
         <div>
-            <?php echo $productGioco -> getColore(); ?>
-        </div> 
-
-        <div>
-            <?php echo $productGioco -> getWeight(); ?> KG
+            <?php echo $productGioco -> getWeight(); 
+            // catch(Exception $e) { echo "Error: " . $e -> getMessage();}
+            ?> KG
         </div>
     </div>
 </div>
